@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Blog News</title>
+  </head>
+  <body id="first-style">
+    <!----------------------------------------------------GUEST PAGE----------------------------------------------------------->
+    <div id="guest-page">
+      <div id="user-info1">
+        <div class="box">
+          <input
+            onkeyup="guestSearchBlog()"
+            type="text"
+            id="blog-search1"
+            placeholder="Search for blog..."
+          />
+          <a href="#"><i class="bi bi-search"></i></a>
+        </div>
+        <button onclick="logOut()" class="btn btn-danger">LOGIN</button>
+      </div>
+
+      <div class="container position-relative">
+        <div class="row align-items-center" id="place-for-blog1"></div>
+      </div>
+    </div>
+
+    <!----------------------------------------------------LOGIN/REGISTER PAGE----------------------------------------------------------->
+    <div id="container">
+      <div id="login-form">
+        <h1>Login</h1>
+        <input type="email" placeholder="Email or Username" id="mejl" />
+        <input
+          onkeyup="loginOnEnter(event)"
+          type="password"
+          placeholder="Password"
+          id="pass"
+        />
+        <button onclick="login()" id="btn">Login</button>
+        <p id="error-msg" style="display: none">Invalid Credentials!</p>
+        <p>
+          Don't have an account? <a onclick="register()" href="#">Sign up</a>
+        </p>
+      </div>
+      <div id="register-form">
+        <h1>SignUp</h1>
+        <input type="text" placeholder="Name" id="name" />
+        <input type="email" placeholder="Email" id="signup-mejl" />
+        <input type="text" placeholder="Address" id="address" />
+        <input type="text" placeholder="Username" id="username" />
+        <input type="password" placeholder="Password" id="signup-pass" />
+        <button onclick="registerBtn()" id="register-btn">Register Now</button>
+        <p id="error-ms" style="display: none"></p>
+        <p>
+          You have alredy account! Return to
+          <a onclick="returnToLogin()" href="#">Login</a>
+        </p>
+      </div>
+    </div>
+
+    <!----------------------------------------------------BLOG PAGE----------------------------------------------------------->
+    <div id="div1">
+      <div id="user-info">
+        <i class="bi bi-person-circle avatar"></i>
+        <p id="user-acc"></p>
+        <div class="box">
+          <input
+            onkeyup="searchBlog()"
+            type="text"
+            id="blog-search"
+            placeholder="Search for blog..."
+          />
+          <a href="#"><i class="bi bi-search"></i></a>
+        </div>
+        <button id="logout" onclick="logOut()" class="btn btn-danger">
+          LOGOUT
+        </button>
+      </div>
+
+      <div class="container">
+        <div class="row justify-content-center pt-5">
+          <div class="col-sm-10 col-lg-8 pb-3">
+            <input type="text" id="blog-title" placeholder="Blog title" />
+          </div>
+          <div class="col-sm-10 col-lg-8 mb-5">
+            <textarea
+              id="blog-story"
+              cols="30"
+              rows="6"
+              placeholder="Blog story..."
+            ></textarea>
+            <button
+              onclick="postBlog()"
+              class="btn btn-success mb-4 ms-3"
+              id="post-blog"
+            >
+              Post Blog
+            </button>
+          </div>
+          <p id="complete-blog" style="display: none"></p>
+        </div>
+        <div class="row align-items-center" id="place-for-blog"></div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
